@@ -145,5 +145,15 @@ const App = () => {
   );
 };
 
+function App() {
+  return (
+    <div className="app">
+      <NextButton />
+      <InputField />
+      {/* Или ваш комбинированный компонент */}
+      <FormWithValidation />
+    </div>
+  )
+}
 
 export default App;
