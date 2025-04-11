@@ -1,41 +1,33 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #050C26;
-  color: #FFFFFF;
-  font-family: 'Arial', sans-serif;
-  min-height: 100vh;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: #4D8EEB;
-  text-decoration: none;
-}
-
-button {
-  background-color: #1E3A8A;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #3B82F6;
-}
-
-input, select {
-  background-color: #0F172A;
-  color: white;
-  border: 1px solid #1E293B;
+/* Добавьте в существующие стили */
+.tg-card {
+  background: var(--tg-theme-secondary-bg-color, #1E293B);
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.tg-table {
   width: 100%;
-  margin-bottom: 16px;
+  border-collapse: collapse;
+}
+
+.tg-table th, .tg-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--tg-theme-hint-color, #707579);
+}
+
+.tg-accordion details {
+  margin: 10px 0;
+}
+
+.tg-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.tg-profile-card {
+  text-align: center;
+  margin-top: 20px;
 }
