@@ -11,7 +11,7 @@ export default function App({ tg }) {
   return (
     <Router>
       <Layout tg={tg}>
-        <nav className="nav">
+        <nav style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
           <Link to="/">Регистрация</Link>
           <Link to="/user-details">Данные</Link>
           <Link to="/workouts">Тренировки</Link>
