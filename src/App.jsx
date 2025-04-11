@@ -1,37 +1,26 @@
-import { useState } from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Registration from './pages/Registration';
+import UserDetails from './pages/UserDetails';
+import Workouts from './pages/Workouts';
+import Ratings from './pages/Ratings';
+import Guide from './pages/Guide';
+import Profile from './pages/Profile';
 
 function App() {
-  const [inputValue, setInputValue] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (inputValue.trim()) {
-      setMessage(`Вы ввели: ${inputValue}`);
-      setInputValue('');
-    } else {
-      setMessage('Пожалуйста, введите текст');
-    }
-  };
-
   return (
-    <div className="app">
-      <h1>Мини-приложение</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Введите текст..."
-          className="input-field"
-        />
-        <button type="submit" className="submit-button">
-          Отправить
-        </button>
-      </form>
-      {message && <p className="message">{message}</p>}
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Registration />} />
+          <Route path="/user-details" element={<UserDetails />} />
+          <Route path="/workouts" element={<Workouts />} />
+          <Route path="/ratings" element={<Ratings />} />
+          <Route path="/guide" element={<Guide />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
