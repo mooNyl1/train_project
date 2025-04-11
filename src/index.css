@@ -31,3 +31,25 @@
   text-align: center;
   margin-top: 20px;
 }
+
+/* Base styles for Telegram WebApp */
+:root {
+  --tg-bg: #050C26;
+  --tg-text: #FFFFFF;
+  --tg-hint: #707579;
+  --tg-button: #32A6FE;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--tg-theme-bg-color, var(--tg-bg));
+  color: var(--tg-theme-text-color, var(--tg-text));
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

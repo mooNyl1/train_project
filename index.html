@@ -1,17 +1,54 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-    Telegram.WebApp.expand();
-    </script>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#050C26" />
+  
+  <!-- Telegram WebApp Integration -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    // Инициализация Telegram WebApp
+    if (window.Telegram && Telegram.WebApp) {
+      Telegram.WebApp.expand();
+      Telegram.WebApp.enableClosingConfirmation();
+      Telegram.WebApp.setHeaderColor('#050C26');
+      Telegram.WebApp.setBackgroundColor('#050C26');
+    }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  
+  <!-- App Title -->
+  <title>TrainProject</title>
+  
+  <!-- Preload Base CSS -->
+  <link rel="preload" href="/assets/index.css" as="style" />
+  
+  <!-- Base URL for SPA -->
+  <base href="/" />
+</head>
+<body>
+  <!-- Root Container -->
+  <div id="root" style="min-height: 100vh; background-color: #050C26;"></div>
+  
+  <!-- Fallback Message -->
+  <noscript>
+    <div style="color: white; text-align: center; padding: 20px;">
+      Для работы приложения требуется JavaScript. Пожалуйста, включите его в настройках браузера.
+    </div>
+  </noscript>
+
+  <!-- Vite Entry Point -->
+  <script type="module" src="/src/main.jsx"></script>
+  
+  <!-- Telegram WebApp Fallback -->
+  <script>
+    if (!window.Telegram?.WebApp) {
+      console.warn('Telegram WebApp not detected! Running in standalone mode');
+      document.getElementById('root').style.padding = '20px';
+    }
+  </script>
+</body>
 </html>

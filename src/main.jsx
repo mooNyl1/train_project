@@ -7,8 +7,10 @@ import './index.css';
 const tg = window.Telegram?.WebApp;
 
 if (tg) {
-  tg.expand(); // Раскрываем на весь экран
-  tg.enableClosingConfirmation(); // Подтверждение закрытия
+  tg.expand();
+  tg.enableClosingConfirmation();
+} else {
+  console.warn('Telegram WebApp not detected! Running in fallback mode');
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
